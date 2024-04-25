@@ -53,8 +53,7 @@ body:json {
       "thesis_supervisors": [
         {
           "name": "Johnson, Michael",
-          "affiliation": "University of Science",
-          "orcid": "0000-0001-2345-6789"
+          "affiliation": "University of Science"
         },
         {
           "name": "Lee, Sarah",
@@ -120,7 +119,7 @@ body:json {
       "journal_volume": "10",
       "journal_issue": "3",
       "journal_pages": "123-135",
-      "journal_issn": "1234-4321", // can't set ISSN
+      "journal_issn": "1234-4321", // bug: can't set ISSN
       "conference_title": "20th International Conference on Quantum Computing",
       "conference_acronym": "ICQC'23",
       "conference_dates": "14-18 October 2023",
@@ -130,23 +129,27 @@ body:json {
       "conference_session_part": "1",
       "imprint_publisher": "TechBooks Inc.",
       "imprint_place": "New York, USA",
-      "imprint_isbn": "978-1-1234-5678-9", // can't set ISBN
+      "imprint_isbn": "978-1-1234-5678-9", // bug: can't set ISBN
       "partof_pages": "1-100",
       "partof_title": "Advancements in Quantum Computing",
       "thesis_university": "University of Science",
       "communities": [
         {
-          "identifier": "test-carlin" // doesn't work in UI, but returned in API
+          "identifier": "test-carlin" // bug: doesn't work in UI, but returned in API
         }
       ],
       "notes": "This is a test upload",
       "method": "<p>The research methodology involved conducting quantum experiments.</p>",
       "upload_type": "publication",
       "publication_type": "preprint"
-      // "grants": [{"id": "101000832"}] not possible to add grants via API
+      // "grants": [{"id": "101000832"}] bug: not possible to add grants via API
       // not possible to add "additional_titles", "additional_descriptions", 
       // alternate identifiers, custom license
       // Unsure how to add Software fields or DWC/AC custom fields
     }
   }
+}
+
+script:post-response {
+  bru.setVar('latest-draft-id', res.body.id);
 }
