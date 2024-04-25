@@ -1,0 +1,11 @@
+meta {
+  name: Publish latest draft
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{site}}/api/deposit/depositions/{{latest-draft-id}}/actions/publish
+  body: none
+  auth: inherit
+}

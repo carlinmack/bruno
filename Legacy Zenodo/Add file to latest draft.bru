@@ -1,11 +1,11 @@
 meta {
-  name: Sandbox: Add file to latest draft
+  name: Add file to latest draft
   type: http
-  seq: 5
+  seq: 3
 }
 
 post {
-  url: https://sandbox.zenodo.org/api/deposit/depositions/{{latest-draft-id}}/files
+  url: {{site}}/api/deposit/depositions/{{latest-draft-id}}/files
   body: multipartForm
   auth: inherit
 }

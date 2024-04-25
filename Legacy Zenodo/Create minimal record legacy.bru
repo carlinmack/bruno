@@ -1,11 +1,11 @@
 meta {
-  name: Sandbox: Create minimal record legacy
+  name: Create minimal record legacy
   type: http
   seq: 2
 }
 
 post {
-  url: https://sandbox.zenodo.org/api/deposit/depositions
+  url: {{site}}/api/deposit/depositions
   body: json
   auth: bearer
 }
@@ -22,7 +22,7 @@ body:json {
   {
     "metadata": {
       "title": "Advancements in Quantum Computing",
-      "upload_type": "Other",
+      "upload_type": "other",
       "creators": [
         {
           "name": "Carberry, Josiah",

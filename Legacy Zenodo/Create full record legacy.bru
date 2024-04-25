@@ -1,11 +1,11 @@
 meta {
-  name: Sandbox: Create full record legacy
+  name: Create full record legacy
   type: http
   seq: 1
 }
 
 post {
-  url: https://sandbox.zenodo.org/api/deposit/depositions
+  url: {{site}}/api/deposit/depositions
   body: json
   auth: bearer
 }
