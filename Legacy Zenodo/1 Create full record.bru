@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{site}}/api/deposit/depositions
+  url: {{baseURL}}/api/deposit/depositions
   body: json
   auth: bearer
 }
@@ -151,5 +151,5 @@ body:json {
 }
 
 script:post-response {
-  bru.setVar('latest-draft-id', res.body.id);
+  bru.setVar('record_id', res.body.id);
 }

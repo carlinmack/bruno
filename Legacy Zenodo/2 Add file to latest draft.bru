@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{site}}/api/deposit/depositions/{{latest-draft-id}}/files
+  url: {{baseURL}}/api/deposit/depositions/{{record_id}}/files
   body: multipartForm
   auth: inherit
 }
@@ -20,5 +20,5 @@ body:multipart-form {
 }
 
 docs {
-  This is designed to be executed after one of the Create requests, but you can also define latest-draft-id in the vars section.
+  This is designed to be executed after one of the Create requests, but you can also define record_id in the vars section.
 }
