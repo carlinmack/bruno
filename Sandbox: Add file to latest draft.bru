@@ -1,0 +1,24 @@
+meta {
+  name: Sandbox: Add file to latest draft
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://sandbox.zenodo.org/api/deposit/depositions/{{latest-draft-id}}/files
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+}
+
+body:multipart-form {
+  file: @file(test-file.txt)
+  name: test-file.txt
+}
+
+docs {
+  This is designed to be executed after one of the Create requests, but you can also define latest-draft-id in the vars section.
+}
