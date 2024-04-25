@@ -1,11 +1,11 @@
 meta {
-  name: 1 Create minimal record
+  name: 3 Publish latest draft
   type: http
-  seq: 2
+  seq: 4
 }
 
 post {
-  url: {{baseURL}}/api/deposit/depositions
+  url: {{baseURL}}/api/draft
   body: json
   auth: bearer
 }
@@ -31,8 +31,4 @@ body:json {
       ]
     }
   }
-}
-
-script:post-response {
-  bru.setVar('record_id', res.body.id);
 }
