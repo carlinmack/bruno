@@ -11,3 +11,9 @@ docs {
   
   If you are developing locally, you should open the settings and disable SSL/TLS Certificate Verification
 }
+
+script:pre-request {
+  const now = new Date()
+  bru.setVar("now", now.toISOString());
+  bru.setVar("today", now.toISOString().split('T')[0]);
+}
