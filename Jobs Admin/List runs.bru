@@ -1,0 +1,11 @@
+meta {
+  name: List runs
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseURL}}/api/jobs/{{job_id}}/runs
+  body: none
+  auth: inherit
+}

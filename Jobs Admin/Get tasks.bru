@@ -1,0 +1,11 @@
+meta {
+  name: Get tasks
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseURL}}/api/tasks
+  body: none
+  auth: inherit
+}
