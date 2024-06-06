@@ -16,19 +16,13 @@ headers {
 
 body:json {
   {
-    "title": "File Integrity",
-    "task": "invenio_files_rest.tasks.verify_checksum",
-    "description": "Ensure that checksums are valid",
-    "active": false,
-    "default_queue": "low",
-    "default_args": {
-      "arg1": "value1",
-      "arg2": "value2",
-      "kwarg1": "value3"
-    },
-    "schedule": {
-      "type": "interval",
-      "hours": 4
+   "title": "Process Funders",
+   "description": "Job to process funders",
+   "active": false,
+   "task": "invenio_vocabularies.services.tasks.process_datastream",
+   "default_queue": "low",
+   "default_args": null,
+   "schedule": {"type": "crontab", "minute": "*/5"
     }
   }
 }
